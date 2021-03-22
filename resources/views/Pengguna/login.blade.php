@@ -82,6 +82,7 @@
   </div>
 </div>
 <!-- /.login-box -->
+@include('sweetalert::alert')
 
 <!-- jQuery -->
 <script src="{{asset('Admin/plugins/jquery/jquery.min.js')}}"></script>

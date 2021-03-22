@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/login', function () {
+Route::get('/', function () {
     return view('Pengguna.login');
-})->name('login');
+})->name('');
 
 Route::post('/postlogin', 'LoginController@postlogin')->name ('postlogin');
 Route::get('/logout', 'LoginController@logout')->name ('logout');
@@ -25,4 +25,7 @@ Route::group(['middleware' => ['auth','ceklevel:superadmin']], function (){
     
     route::get('/home','HomeController@index');
     route::get('/stok', 'StokkartuController@index');
+    route::get('/user', 'UserController@index');
+    route::get('/adduser', 'UserController@create')->name ('adduser');
+    route::post('/simpanuser', 'UserController@store')->name ('simpanuser');
 });

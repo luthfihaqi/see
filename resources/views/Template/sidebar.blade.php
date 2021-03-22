@@ -44,6 +44,40 @@
             </a>
           </li>
 <!--Menu Admin Kartu-->
+<li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                User Management
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/user" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                  UserName</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                  Role Menu</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                  CRUD</p>
+                </a>
+              </li>
+            </ul> 
+          </li>
+<!--Menu Admin Kartu-->
         <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -128,7 +162,7 @@
             </ul>
           </li>
 <!--Menu Customer Service-->
-<li class="nav-item">
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
@@ -164,7 +198,7 @@
             </ul>
           </li>
 <!--Menu Teknisi-->
-            <li class="nav-item">
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
@@ -245,7 +279,7 @@
               </p>
             </a>
           </li>
-        
+        </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
