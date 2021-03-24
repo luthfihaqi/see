@@ -48,7 +48,7 @@
                   <tr>
                     <th>No </th>
                     <th>Name</th>
-                    <th>Level</th>
+                    <th>Jabatan</th>
                     <th>Email</th>
                     <th>Aksi</th>
                   </tr>
@@ -57,12 +57,16 @@
                   @php
                     $no = 1;	
                     @endphp
-                    @foreach($DataUsers as $DataUsers)
+                    @foreach ($DataUsers as $user)
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ $DataUsers->name }}</td>
-                    <td>{{ $DataUsers->level }}</td>
-                    <td>{{ $DataUsers->email }}</td> 
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->jabatan->jabatan  }}</td>
+                    <td>{{ $user->email }}</td>
+                    
+                    <td><a href="edituser.php?id="><button type="button" class="btn btn-primary">Edit</button></a> 
+                    <a href="hapususer.php?id="><button type="button" class="btn btn-danger">Delete</button></a>  </td>
+                    
                 </tr>
                     @endforeach
                   </tbody>
@@ -99,6 +103,7 @@
 </div>
 <!-- ./wrapper -->
 @include('Template.js')
+
 
 <script>
   $(function () {

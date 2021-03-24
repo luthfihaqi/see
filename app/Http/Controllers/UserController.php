@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\jabatan;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -15,8 +17,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $DataUsers = user::all();
-        return view ('UserMan.datauser',compact('DataUsers'));
+            $DataUsers = user::all();
+            return view ('UserMan.datauser',compact('DataUsers'));
+            
     }
 
     /**
@@ -26,8 +29,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $DataUsers = user::all();
-        return view ('UserMan.adduser',compact('addusers'));
+        $jabatann = jabatan::all();
+            return view ('UserMan.adduser',compact('jabatann'));
     }
 
     /**
@@ -41,13 +44,14 @@ class UserController extends Controller
         //dd($request->all());//'name','level', 'email', 'password',
             $user = new user();
             $user -> name = $request -> name;
-            $user -> level = $request -> level;
+            $user -> jabatan_id = $request -> jabatan_id;
             $user -> email = $request -> email;
             $user -> password = bcrypt($request);
-            $user -> remember_token = random_str(60)($request);
+            $user -> remember_token = $random = Str::random(60);
             $user -> save ();
 
-        return $user;
+        return redirect ('/user')->with('toast_success', 'Data Berhasil disimpan!!');
+       
         
     }
 

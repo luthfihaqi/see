@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,16 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('Pengguna.login');
-})->name('');
+})->name('/login');
 
+//Auth::routes();
 Route::post('/postlogin', 'LoginController@postlogin')->name ('postlogin');
 Route::get('/logout', 'LoginController@logout')->name ('logout');
 
-Route::group(['middleware' => ['auth','ceklevel:superadmin']], function (){
+Route::group(['middleware' => ['auth','ceklevel:1']], function (){
     
     route::get('/home','HomeController@index');
-    route::get('/stok', 'StokkartuController@index');
+    route::get('/stok', 'Stok_kartuController@index');
     route::get('/user', 'UserController@index');
     route::get('/adduser', 'UserController@create')->name ('adduser');
     route::post('/simpanuser', 'UserController@store')->name ('simpanuser');
+   
 });

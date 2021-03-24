@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Stok_kartu;
 
-class StokkartuCOntroller extends Controller
+class Stok_kartuCOntroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class StokkartuCOntroller extends Controller
      */
     public function index()
     {
-        return view ('Admin.stok_kartu');
+        $DataKartu = stok_kartu::all();
+        return view ('Admin.stok_kartu', compact('DataKartu'));
     }
 
     /**

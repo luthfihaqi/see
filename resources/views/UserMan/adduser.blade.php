@@ -40,16 +40,22 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input type="hash::make($request->password)" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleLevel">Level</label>
-                        <input type="text" name="level" class="form-control" id="exampleInputPassword1" placeholder="Level">
+                    <div class="form-control select2" width="100%">
+                        <label for="exampleLevel">Jabatan</label>
+                        <select name="jabatan_id">
+                        <option value= ''> Pilih </option>
+                          @foreach ($jabatann as $item)
+                           <option value="{{$item->id}}">{{$item->jabatan}}
+                          @endforeach
+                        </select>
+                    </div>
+                    <div class="action" type="{{Str::random(60)}}" name="remember_token" > 
                     </div>
                     </div>
-                    
                     <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
-              </form>
+                </form>
             </div>
             <!-- /.card -->
     </section>
@@ -65,6 +71,7 @@
 </div>
 <!-- ./wrapper -->
 @include('Template.js')
+
 
 </script>
 </body>
